@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><title>Bug repro</title><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"></head><body>
+
+<!-- only needs a video element for repro, rest is just for debugging -->
+<video controls></video>
+
+<!-- just helpful for debugging, not needed for repro -->
+<p>currentTime: <span id="currentTime"></span></p>
+<p>mediaElement bufferedRanges: <span id="rangesMedia"></span></p>
+<p>audioSourceBuffer ranges: <span id="rangesAudio"></span></p>
+<p>videoSourceBuffer ranges: <span id="rangesVideo"></span></p>
+
+scenarios:
+<p><a href="?">no skips</a> - no skips, works fine</p>
+<p><a href="?skipaudio">skip audio</a> - will skip an audio segment after 1 second</p>
+<p><a href="?skipvideo">skip video</a> - will skip a video segment after 1 second</p>
+<p><a href="?skipboth">skip both</a> - will skip a video segment after 1 second, then skip one audio segment after another second</p>
+
+<!-- where the magic happens -->
+<script src="main.js"></script>
+
+<!-- fetches and prepares the chunks -->
+<script src="prepareData.js"></script>
+
+<!-- updates debugging ui -->
+<script src="ui.js"></script>
+
+</body></html>

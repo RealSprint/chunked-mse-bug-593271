@@ -1,0 +1,8 @@
+{
+  "name": "reprocode",
+  "description": "reproducable-code-for-issue-593271",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "4.13.4"
+  }
+}
